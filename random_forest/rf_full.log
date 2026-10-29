@@ -1,0 +1,67 @@
+python3 make_rf_classifier.py -i -c ~/kamara/fap/2020/training_classes/config_rf_full.json
+
+0/other címkéhez tartozó elemek száma: 37538
+1/roof címkéhez tartozó elemek száma: 25164
+2/vegetation címkéhez tartozó elemek száma: 116599
+3/wall címkéhez tartozó elemek száma: 1972
+{'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': 'balanced', 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 4, 'min_samples_split': 5, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 300, 'n_jobs': -1, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+Score for train data 1.0
+Score for test data 0.9998712809385458
+Maximum depth among all trees: 32
+Minimum depth among all trees: 16
+Average tree depth: 21.70
+
+Coord. Z                        :   0.1176
+Omnivariance (2)                :   0.0837
+Verticality (0.5)               :   0.0771
+Verticality (1)                 :   0.0668
+Verticality (2)                 :   0.0630
+Verticality (0.25)              :   0.0493
+Blue                            :   0.0378
+Degree of planarity (M) (2)     :   0.0295
+Linearity (2)                   :   0.0288
+Anisotropy (2)                  :   0.0271
+Sphericity (2)                  :   0.0260
+Degree of linearity (K) (0.5)   :   0.0244
+Planarity (0.5)                 :   0.0241
+Planarity (0.25)                :   0.0220
+Dip (degrees)                   :   0.0217
+Surface variation (2)           :   0.0209
+Degree of linearity (K) (0.25)  :   0.0199
+Eigenentropy (2)                :   0.0175
+Planarity (2)                   :   0.0173
+Eigenentropy (0.5)              :   0.0172
+Surface variation (0.25)        :   0.0157
+Eigenentropy (1)                :   0.0146
+Linearity (0.5)                 :   0.0114
+Anisotropy (0.25)               :   0.0105
+Degree of linearity (K) (2)     :   0.0102
+Sphericity (0.25)               :   0.0101
+Surface variation (0.5)         :   0.0095
+Omnivariance (0.5)              :   0.0091
+Degree of planarity (M) (0.25)  :   0.0091
+Red                             :   0.0086
+Green                           :   0.0085
+Omnivariance (1)                :   0.0078
+Sphericity (1)                  :   0.0075
+Surface variation (1)           :   0.0071
+Anisotropy (1)                  :   0.0070
+Degree of planarity (M) (1)     :   0.0069
+Degree of planarity (M) (0.5)   :   0.0068
+Degree of linearity (K) (1)     :   0.0059
+Roughness (2)                   :   0.0059
+Planarity (1)                   :   0.0059
+Sphericity (0.5)                :   0.0058
+Linearity (1)                   :   0.0056
+Anisotropy (0.5)                :   0.0051
+Omnivariance (0.25)             :   0.0044
+Linearity (0.25)                :   0.0022
+Eigenentropy (0.25)             :   0.0019
+Mean curvature (0.5)            :   0.0017
+Roughness (1)                   :   0.0016
+Dip direction (degrees)         :   0.0008
+Roughness (0.5)                 :   0.0006
+Roughness (0.25)                :   0.0002
+Mean curvature (0.25)           :   0.0002
+execution time 27.4 seconds
+

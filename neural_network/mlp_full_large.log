@@ -1,0 +1,90 @@
+python3 make_classifier.py -l -i ~/kamara/fap/2020/super_classes/config.json
+
+  104935 samples for label 0/other
+   58242 samples for label 1/roof
+  207830 samples for label 2/vegetation
+    8640 samples for label 3/wall
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ dense (Dense)                   │ (None, 1024)           │        21,504 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 1024)           │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 512)            │       524,800 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 512)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_2 (Dense)                 │ (None, 256)            │       131,328 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_2 (Dropout)             │ (None, 256)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_3 (Dense)                 │ (None, 128)            │        32,896 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_3 (Dropout)             │ (None, 128)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_4 (Dense)                 │ (None, 64)             │         8,256 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_4 (Dropout)             │ (None, 64)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_5 (Dense)                 │ (None, 32)             │         2,080 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_6 (Dense)                 │ (None, 16)             │           528 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_7 (Dense)                 │ (None, 4)              │            68 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 721,460 (2.75 MB)
+ Trainable params: 721,460 (2.75 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 36/100
+
+Model accuracy on test data: 0.9942
+Accuracy on test data 
+               precision    recall  f1-score   support
+
+       other       1.00      0.99      0.99     21070
+        roof       1.00      1.00      1.00     11698
+  vegetation       0.99      1.00      1.00     41758
+        wall       1.00      0.98      0.99      1783
+
+    accuracy                           0.99     76309
+   macro avg       1.00      0.99      0.99     76309
+weighted avg       0.99      0.99      0.99     76309
+
+Model accuracy on validation data: 0.9935
+Accuracy on validation data 
+               precision    recall  f1-score   support
+
+       other       0.99      0.99      0.99     10430
+        roof       1.00      1.00      1.00      5778
+  vegetation       0.99      1.00      0.99     20549
+        wall       1.00      0.98      0.99       829
+
+    accuracy                           0.99     37586
+   macro avg       1.00      0.99      0.99     37586
+weighted avg       0.99      0.99      0.99     37586
+
+Coord. Z                 0.348
+2nd eigenvalue (2)       0.147
+3rd eigenvalue (2)       0.141
+2nd eigenvalue (1)       0.092
+3rd eigenvalue (1)       0.077
+3rd eigenvalue (0.5)     0.063
+2nd eigenvalue (0.5)     0.058
+Roughness (2)            0.054
+1st eigenvalue (2)       0.037
+Dip (degrees)            0.035
+3rd eigenvalue (0.25)    0.018
+1st eigenvalue (1)       0.015
+Roughness (1)            0.014
+Mean curvature (0.5)     0.008
+1st eigenvalue (0.5)     0.005
+Roughness (0.25)         0.002
+Roughness (0.5)          0.002
+2nd eigenvalue (0.25)    0.002
+1st eigenvalue (0.25)    0.001
+Mean curvature (0.25)   -0.000
+execution time 1282.1 seconds
+

@@ -1,0 +1,119 @@
+python3 make_classifier.py -l -i ~/kamara/fap/2020/super_classes/config_geom.json
+
+  104935 samples for label 0/other
+   58242 samples for label 1/roof
+  207830 samples for label 2/vegetation
+    8640 samples for label 3/wall
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ dense (Dense)                   │ (None, 1024)           │        51,200 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 1024)           │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_1 (Dense)                 │ (None, 512)            │       524,800 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_1 (Dropout)             │ (None, 512)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_2 (Dense)                 │ (None, 256)            │       131,328 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_2 (Dropout)             │ (None, 256)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_3 (Dense)                 │ (None, 128)            │        32,896 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_3 (Dropout)             │ (None, 128)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_4 (Dense)                 │ (None, 64)             │         8,256 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout_4 (Dropout)             │ (None, 64)             │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_5 (Dense)                 │ (None, 32)             │         2,080 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_6 (Dense)                 │ (None, 16)             │           528 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense_7 (Dense)                 │ (None, 4)              │            68 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 751,156 (2.87 MB)
+ Trainable params: 751,156 (2.87 MB)
+ Non-trainable params: 0 (0.00 B)
+
+Epoch 20/100
+
+Model accuracy on test data: 0.9966
+Accuracy on test data 
+               precision    recall  f1-score   support
+
+       other       0.99      1.00      0.99     21095
+        roof       1.00      1.00      1.00     11686
+  vegetation       1.00      1.00      1.00     41837
+        wall       0.99      1.00      0.99      1691
+
+    accuracy                           1.00     76309
+   macro avg       1.00      1.00      1.00     76309
+weighted avg       1.00      1.00      1.00     76309
+
+Model accuracy on validation data: 0.9969
+Accuracy on validation data 
+               precision    recall  f1-score   support
+
+       other       0.99      1.00      1.00     10421
+        roof       1.00      1.00      1.00      5761
+  vegetation       1.00      1.00      1.00     20551
+        wall       0.99      1.00      0.99       853
+
+    accuracy                           1.00     37586
+   macro avg       1.00      1.00      1.00     37586
+weighted avg       1.00      1.00      1.00     37586
+
+Coord. Z                 0.322
+Verticality (2)          0.115
+Verticality (1)          0.055
+Omnivariance (2)         0.051
+Roughness (2)            0.025
+Surface variation (2)    0.023
+Linearity (2)            0.022
+Planarity (2)            0.021
+Degree of planarity (M) (2)  0.019
+Verticality (0.5)        0.018
+Linearity (1)            0.015
+Sphericity (2)           0.014
+Degree of planarity (M) (1)  0.014
+Omnivariance (1)         0.013
+Surface variation (1)    0.011
+Planarity (1)            0.009
+Linearity (0.5)          0.007
+Sphericity (1)           0.006
+Mean curvature (0.5)     0.004
+Degree of planarity (M) (0.5)  0.004
+Verticality (0.25)       0.003
+Eigenentropy (2)         0.003
+Roughness (1)            0.003
+Surface variation (0.5)  0.002
+Omnivariance (0.5)       0.002
+Linearity (0.25)         0.001
+Surface variation (0.25)  0.001
+Sphericity (0.5)         0.001
+Sphericity (0.25)        0.001
+Roughness (0.5)          0.001
+Eigenentropy (0.5)       0.001
+Eigenentropy (1)         0.001
+Mean curvature (0.25)    0.001
+Degree of planarity (M) (0.25)  0.001
+Dip (degrees)            0.001
+Planarity (0.5)          0.000
+Anisotropy (1)           0.000
+Omnivariance (0.25)      0.000
+Eigenentropy (0.25)      0.000
+Planarity (0.25)         0.000
+Dip direction (degrees)  0.000
+Anisotropy (2)           0.000
+Anisotropy (0.5)         0.000
+Anisotropy (0.25)        0.000
+Roughness (0.25)         0.000
+Degree of linearity (K) (0.5)  0.000
+Degree of linearity (K) (1)  0.000
+Degree of linearity (K) (2)  0.000
+Degree of linearity (K) (0.25)  0.000
+execution time 1988.1 seconds
+
